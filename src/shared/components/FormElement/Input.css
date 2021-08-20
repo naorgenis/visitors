@@ -1,0 +1,10 @@
+.form_control {
+  position: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 20px;
+}
+
+.form_control_invalid input {
+  background-color: tomato;
+}
