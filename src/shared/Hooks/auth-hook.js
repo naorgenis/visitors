@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 let logoutTimer;
 
 export const useAuth = () => {
+  const history = useHistory();
   const [token, setToken] = useState(null);
   const [tokenExperationDate, setTokenExperationDate] = useState();
   const [userId, setUserId] = useState(null);
@@ -31,6 +33,7 @@ export const useAuth = () => {
     setToken(null);
     setUserId(null);
     setTokenExperationDate(null);
+    history.push("/");
   }, []);
 
   useEffect(() => {

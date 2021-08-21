@@ -48,10 +48,7 @@ function Auth(props) {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     if (loginMode) {
-      console.log("login");
       try {
-        console.log("try");
-
         const response = await sendRequest(
           `${process.env.REACT_APP_BACKEND_URL}/users/login`,
           "POST",
@@ -63,7 +60,6 @@ function Auth(props) {
             "Content-Type": "application/json",
           }
         );
-        console.log(response);
 
         auth.login(response.userId, response.token);
       } catch (err) {}

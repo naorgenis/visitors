@@ -3,7 +3,6 @@ import Backdrop from "../Backdrop/Backdrop";
 import "./Modal.css";
 
 function Modal(props) {
-  console.log(props.address);
   return (
     <>
       <Backdrop modalToggle={props.modalToggle} />

@@ -44,6 +44,7 @@ function NewPlace(props) {
     formData.append("description", formState.inputs.description.value);
     formData.append("address", formState.inputs.address.value);
     formData.append("image", formState.inputs.image.value);
+    console.log("#", formState);
 
     try {
       await sendRequest(
@@ -59,17 +60,22 @@ function NewPlace(props) {
     } catch (error) {}
   };
 
+  const closeErrorModal = () => {
+    clearError();
+    formState.inputs.image.value = "";
+  };
+
   return (
     <React.Fragment>
       {error ? (
-        <ModalError error={error} modalToggle={clearError} />
+        <ModalError error={error} modalToggle={closeErrorModal} />
       ) : isLoading ? (
         "Loading..."
       ) : (
         <form className="form" onSubmit={placeSubmiteHandler}>
           <Input
             id="title"
-            lable="title"
+            lable="Title"
             element="input"
             type="text"
             validators={[]}
@@ -78,7 +84,7 @@ function NewPlace(props) {
           />
           <Input
             id="address"
-            lable="address"
+            lable="Address"
             element="input"
             type="text"
             validators={[]}
@@ -86,9 +92,10 @@ function NewPlace(props) {
             onInput={inputHandler}
           />
           <ImageUploader onInputs={inputHandler} id="image" />
+
           <Input
             id="description"
-            lable="description"
+            lable="Description"
             element="textArea"
             type="text"
             validators={[]}

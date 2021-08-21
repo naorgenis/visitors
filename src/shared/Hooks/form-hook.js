@@ -8,7 +8,7 @@ const formReducer = (state, action) => {
         if (input === action.input) {
           formIsValid = formIsValid && action.isValid;
         } else {
-          formIsValid = formIsValid && state.inputs[input].isValid; //problem
+          formIsValid = formIsValid && state.inputs[input].isValid;
         }
       }
       return {
