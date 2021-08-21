@@ -71,7 +71,6 @@ function Auth(props) {
         formData.append("password", stateForm.inputs.password.value);
         formData.append("image", stateForm.inputs.image.value);
 
-        console.log(formData);
         const response = await sendRequest(
           `${process.env.REACT_APP_BACKEND_URL}/users/signup`,
           "POST",

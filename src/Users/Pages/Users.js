@@ -7,7 +7,6 @@ function Users(props) {
   const { isLoading, error, sendRequest, clearError } = useHttpHook();
 
   const [loadedUsers, setLoadedUsers] = useState();
-  console.log(process.env.REACT_APP_BACKEND_URL);
   useEffect(() => {
     const fetchUsers = async () => {
       try {
