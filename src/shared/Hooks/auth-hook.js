@@ -34,7 +34,7 @@ export const useAuth = () => {
     setUserId(null);
     setTokenExperationDate(null);
     history.push("/");
-  }, []);
+  }, [history]);
 
   useEffect(() => {
     if (token && tokenExperationDate) {

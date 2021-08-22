@@ -5,8 +5,8 @@ import { useHttpHook } from "../../shared/Hooks/http-hook";
 
 function Users(props) {
   const { isLoading, error, sendRequest, clearError } = useHttpHook();
-
   const [loadedUsers, setLoadedUsers] = useState();
+
   useEffect(() => {
     const fetchUsers = async () => {
       try {

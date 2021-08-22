@@ -10,6 +10,7 @@ function Auth(props) {
   const { isLoading, error, sendRequest, clearError } = useHttpHook();
 
   const auth = useContext(AuthContext);
+
   const [loginMode, setLoginMode] = useState(true);
 
   const [stateForm, inputHandler, setFormData] = useForm(
